@@ -1,9 +1,137 @@
 <html>
+<head>
+<title>Test</title>
+<script type="text/javascript">
+  var imageURLs = [
+       "https://i.imgur.com/sv1akSR.gif"
+     , "https://i.imgur.com/LSNyrCq.gif"
+     , "https://i.imgur.com/XIvIWjD.gif"
+  ];
+  function getImageTag() {
+    var img = '<img src=\"';
+    var randomIndex = Math.floor(Math.random() * imageURLs.length);
+    img += imageURLs[randomIndex];
+    img += '\" alt=\"loading\"/>';
+    return img;
+  }
+</script>
+</head>
 <body>
-<center><img src="https://i.imgur.com/MJysmGY.gif"></center>
+<div class="box"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div id="chartbtc">
+<script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+var cccTheme = {"General":{"background":"#000","borderColor":"#000","borderRadius":"1px 1px 0 0"},"Header":{"background":"#000","color":"#fff","displayFollowers":false},"Followers":{"background":"","color":"","borderColor":"","counterBorderColor":"","counterColor":""},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"fillColor":"#3d3d3d","borderColor":"#9b9b9b"},"Trend":{"colorUp":"#16b563;","colorDown":"#ff0009;","colorUnchanged":"#3085d6;"},"Conversion":{"background":"#000","lineHeight":"","color":""}};
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v1/coin/chart?fsym=BTC&tsym=USD';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+</div>
+<div class="kucoindips">
+<iframe width="132" height="260" frameborder="0" scrolling="yes" src="https://www.rssdog.com/index.php?url=https%3A%2F%2Ffeed43.com%2F4852250368334521.xml&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=22&descmax=0&tabwidth=11%25&linktarget=_blank&textsize=smaller&bordercol=%23000000&headbgcol=%23000000&headtxtcol=%233085d6&titlebgcol=%23000000&titletxtcol=%23ffffff&itembgcol=%23000000&itemtxtcol=%23ff0009&ctl=0"></iframe>
+</div>
+<div class="binancedips">
+<iframe width="140" height="260" frameborder="0" scrolling="yes" src="https://www.rssdog.com/index.php?url=https%3A%2F%2Ffeed43.com%2F5147432738764116.xml&mode=html&showonly=&maxitems=0&showdescs=1&desctrim=22&descmax=0&tabwidth=11%25&linktarget=_blank&textsize=smaller&bordercol=%23000000&headbgcol=%23000000&headtxtcol=%23e0b60d&titlebgcol=%23000000&titletxtcol=%23ffffff&itembgcol=%23000000&itemtxtcol=%23ff0009&ctl=0"></iframe>
+</div>
+<center><div id="loading">
+<script type="text/javascript">
+  document.write(getImageTag());
+</script>
+</div>
 </body>
 <style>
 body {background-color: black;}
+		.box{ 
+  background-color: ;
+  position: absolute;
+  z-index: 1;
+  height: 95px;
+  width: 180px;
+  right: 110px;
+  top: 0;
+}
+	.box1{ 
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+  height: 50px;
+  width: 150px;
+  right: 0;
+  top: 0;
+}
+	.box2{ 
+  background-color: ;
+  position: absolute;
+  z-index: 1;
+  height: 270px;
+  width: 100px;
+  left: 0;
+  top: 0;
+}
+	.box3{ 
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+  height: 23;
+  width: 122px;
+  left: 0;
+  top: 245;
+}
+	.box4{ 
+  background-color: ;
+  position: absolute;
+  z-index: 2;
+  height: 270;
+  width: 105px;
+  left: 170;
+  top: 0;
+}
+	.box5{ 
+  background-color: black;
+  position: absolute;
+  z-index: 2;
+  height: 23;
+  width: 115px;
+  left: 160;
+  top: 245;
+}
+#chartbtc { 
+    position: absolute;
+    top: 0;
+	right: 0;
+	width: 300;
+}
+#loading {
+   position: absolute;
+   top: 10;
+   left: 50%;
+   width: 418px;
+   height: 260px;
+   margin-left: -209px; /* Half the width */
+}
+
+.binancedips {
+  position: absolute;
+  z-index: 1;
+  height: 270px;
+  width: 125px;
+  left: 150;
+  top: 8;
+}
+	
 <style>
-</html>
 </html>
